@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  docker-cisco-ucs-extension:
+  cisco-ucs-extension:
     build: .
     container_name: docker-cisco-ucs-extension
     image: appdynamics/docker-cisco-ucs-extension
