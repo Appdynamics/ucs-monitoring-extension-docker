@@ -16,8 +16,8 @@ To build and run the project:
 
 5. Docker Container monitoring is enabled by default in the configuration. This requires a Server Visibility license and version 4.3.3 or higher of both the Controller and the Standalone Machine Agent. If you are only interested in running the Cisco UCS extension without the additional benefits of Server/Docker Visibility, you should set the following flags to false in the `start-appdynamics` bash script as shown below: 
 
->  MA_PROPERTIES+=" -Dappdynamics.sim.enabled=false"
->  MA_PROPERTIES+=" -Dappdynamics.docker.enabled=false"
+    `MA_PROPERTIES+=" -Dappdynamics.sim.enabled=false"` <br>
+    `MA_PROPERTIES+=" -Dappdynamics.docker.enabled=false"`
 
  Setting the above properties to false saves you one Server Visibility license, it will, howeever, use one basic machine agent license. 
 
