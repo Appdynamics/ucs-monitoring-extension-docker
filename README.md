@@ -1,4 +1,4 @@
-## Containarising Cisco UCS AppDynamics Monitoring Extension 
+## Containerising Cisco UCS AppDynamics Monitoring Extension 
 
 This project contains docker artefacts and instructions on how to configure and run the Cisco UCS Monitoring Extension in docker container. All AppDynamics extensions uses the Standalone Machine Agent, this instruction also contains how to enable Docker Visibility -  if required. 
  
@@ -16,10 +16,10 @@ To build and run the project:
 
 5.  Docker Container monitoring requires a Server Visibility license and version 4.3.3 or higher of both the Controller and the Standalone Machine Agent. If you are only interested in running the Cisco UCS extension without the additional benefits of Server/Docker Visibility, you will be required to set the following flags to false in the `start-appdynamics` bash script as shown below: 
 
->     MA_PROPERTIES+=" -Dappdynamics.sim.enabled=false"
->     MA_PROPERTIES+=" -Dappdynamics.docker.enabled=false"
+>  MA_PROPERTIES+=" -Dappdynamics.sim.enabled=false"
+>  MA_PROPERTIES+=" -Dappdynamics.docker.enabled=false"
 
-Setting the above properties to false saves you one Server Visibility license, it will, howeever, use one basic machine agent license. 
+ Setting the above properties to false saves you one Server Visibility license, it will, howeever, use one basic machine agent license. 
 
 6. Run `docker-compose up`
 
