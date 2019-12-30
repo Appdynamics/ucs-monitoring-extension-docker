@@ -1,6 +1,6 @@
 ## Containerising Cisco UCS AppDynamics Monitoring Extension 
 
-This project contains docker artefacts and instructions on how to configure and run the Cisco UCS Monitoring Extension in a docker container. 
+This project contains docker artefacts and instructions on how to configure and run the [Cisco UCS Monitoring Extension](https://www.appdynamics.com/community/exchange/cisco-ucs-monitoring-extension/) in a docker container. 
 
 To build and execute this project, you should be running Docker API version 1.27 or higher (to find out your version, run: `docker version`). The configuration uses the Microsoft Powershell Core docker image which uses Ubuntu as a base image and packages the standalone Machine Agent (with bundled JRE). In addition, it uses a bash shell script that starts the Machine Agent with the correct system properties to connect to your Controller - you would need to supply these values as environment variables via the `docker-compose.yml` file.
 
