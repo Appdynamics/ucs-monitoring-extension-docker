@@ -2,7 +2,7 @@
 
 This project contains docker artefacts and instructions on how to configure and run the Cisco UCS Monitoring Extension in a docker container. 
 
-To build and run this script, you should be running Docker API version 1.27 or higher (to find out your version, run: `docker version`). The configuration uses the Microsoft Powershell Core docker image which uses Ubuntu as a base image and packages the standalone Machine Agent (with bundled JRE). In addition, it uses a simple Bash shell script that starts the Machine Agent with the correct system properties to connect to your Controller - you would need to supply these values as environment variables via the `docker-compose.yml` file.
+To build and execute this project, you should be running Docker API version 1.27 or higher (to find out your version, run: `docker version`). The configuration uses the Microsoft Powershell Core docker image which uses Ubuntu as a base image and packages the standalone Machine Agent (with bundled JRE). In addition, it uses a bash shell script that starts the Machine Agent with the correct system properties to connect to your Controller - you would need to supply these values as environment variables via the `docker-compose.yml` file.
 
 To build and run the project:
 
@@ -12,7 +12,7 @@ To build and run the project:
 
 3. Download the Machine Agent ZIP bundle with JRE (64-bit Linux) from the [AppDynamics Download Site](https://download.appdynamics.com), copy it to your project directory as is. 
 
-4. Download the Cisco UCS Extension from the [AppDynamics Extensions site](https://www.appdynamics.com/community/exchange/cisco-ucs-monitoring-extension/) then edit the `config.json` file and run the `Setup.ps1`  as described in the documentation. The purpose of running the `Setup.ps1` script are to generate UCS encrypted credentials, create analytics schemas and to generate ServiceNow credentials (if in use).  Doing this will require Powershell to be installed on the build machine, alternatively, sping up the container, run the Setup in the container, copy all files in the extension folder to the build machine then rebuild the image. 
+4. Download the Cisco UCS Extension from the [AppDynamics Extensions site](https://www.appdynamics.com/community/exchange/cisco-ucs-monitoring-extension/) then edit the `config.json` file and run the `Setup.ps1`  as described in the [documentation](https://www.appdynamics.com/community/exchange/cisco-ucs-monitoring-extension/). The purpose of running the `Setup.ps1` script are to generate UCS encrypted credentials, create analytics schemas and to generate ServiceNow credentials (if in use).  Doing this will require Powershell to be installed on the build machine, alternatively, spin up the container, run the Setup in the container, copy the {MACHINE_AGENT_HOME}/monitors/ucs-monitoring-extension folder to the build machine then rebuild the image. 
 
 5. Docker Container monitoring is enabled by default in the configuration. This requires a Server Visibility license and version 4.3.3 or higher of both the Controller and the Standalone Machine Agent. If you are only interested in running the Cisco UCS extension without the additional benefits of Server/Docker Visibility, you should set the following flags to false in the `start-appdynamics` bash script as shown below: 
 
