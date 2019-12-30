@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  docker-cisco-ucs-extension:
+    build: .
+    container_name: docker-cisco-ucs-extension
+    image: appdynamics/docker-cisco-ucs-extension
+    environment:
+      - APPD_HOST=CHANGEME
+      - APPD_PORT=443
+      - APPD_ACCOUNT_NAME=CHANGEME
+      - APPD_ACCESS_KEY=CHANGEME
+      - APPD_SSL_ENABLED=true
+    volumes:
+      - /:/hostroot:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      
